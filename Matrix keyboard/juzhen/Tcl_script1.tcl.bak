@@ -1,0 +1,10 @@
+set_location_assignment PIN_30 -to led[0]
+set_location_assignment PIN_28 -to led[1]
+set_location_assignment PIN_11 -to led[2]
+set_location_assignment PIN_10 -to led[3]
+set_location_assignment PIN_7 -to led[4]
+set_location_assignment PIN_3 -to led[5]
+set_location_assignment PIN_2 -to led[6]
+set_location_assignment PIN_1 -to led[7]
+
+

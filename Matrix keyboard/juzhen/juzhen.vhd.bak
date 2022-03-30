@@ -1,0 +1,30 @@
+LIBRARY IEEE ;
+USE IEEE.STD_LOGIC_1164.ALL ;
+ENTITY shumaguan IS 
+	PORT  (
+	segcs  : out STD_LOGIC_vector (3 DOWNTO 0);
+	seg 	 : out STD_LOGIC_vector (7 DOWNTO 0);
+	key	 : in STD_LOGIC_vector (3 DOWNTO 0));
+END;
+ARCHITECTURE	FH1	OF	shumaguan IS
+	BEGIN
+	segcs <= "0000";
+	seg <=  x"3f" WHEN key = "0000" ELSE
+			  x"06" WHEN key = "0001" ELSE
+			  x"5b" WHEN key = "0010" ELSE
+			  x"4f" WHEN key = "0011" ELSE
+			  x"66" WHEN key = "0100" ELSE
+			  x"6D" WHEN key = "0101" ELSE
+			  x"7D" WHEN key = "0110" ELSE
+			  x"07" WHEN key = "0111" ELSE
+			  x"7F" WHEN key = "0111" ELSE
+			  x"6F" WHEN key = "1000" ELSE
+			  x"77" WHEN key = "1001" ELSE
+			  x"7C" WHEN key = "1010" ELSE
+			  x"39" WHEN key = "1011" ELSE
+			  x"5E" WHEN key = "1100" ELSE
+			  x"79" WHEN key = "1101" ELSE
+			  x"71" WHEN key = "1110" ELSE
+			  "10000000";
+END;
+
