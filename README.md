@@ -230,13 +230,13 @@ END;
 
 LPM_counter进行降频率
 
-![image-20220330164903273](第一堂课.assets/image-20220330164903273.png)
+![image-20220330164903273](README.assets/image-20220330164903273.png)
 
-![image-20220330164954834](第一堂课.assets/image-20220330164954834.png)
+![image-20220330164954834](README.assets/image-20220330164954834.png)
 
 ​	
 
-![image-20220330165123975](第一堂课.assets/image-20220330165123975.png)
+![image-20220330165123975](README.assets/image-20220330165123975.png)
 
 ## 超声波测距
 
@@ -244,7 +244,7 @@ LPM_counter进行降频率
 
 能够输出高电平时间，单位为uS，然后每次下降沿的时候，刷新高电平持续时间。
 
-![image-20220331104558166](第一堂课.assets/image-20220331104558166.png)
+![image-20220331104558166](README.assets/image-20220331104558166.png)
 
 ```vhdl
 LIBRARY IEEE ;
