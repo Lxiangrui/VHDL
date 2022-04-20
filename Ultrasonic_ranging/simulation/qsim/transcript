@@ -1,0 +1,40 @@
+# do csb.do 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module csb
+# 
+# Top level modules:
+# 	csb
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module csb_vlg_sample_tst
+# -- Compiling module csb_vlg_check_tst
+# -- Compiling module csb_vlg_vec_tst
+# 
+# Top level modules:
+# 	csb_vlg_vec_tst
+# vsim -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -voptargs=\"+acc\" -t 1ps -novopt work.csb_vlg_vec_tst 
+# Loading work.csb_vlg_vec_tst
+# Loading work.csb
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_pll
+# Loading cycloneive_ver.cycloneive_m_cntr
+# Loading cycloneive_ver.cycloneive_n_cntr
+# Loading cycloneive_ver.cycloneive_scale_cntr
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
+# Loading work.csb_vlg_sample_tst
+# Loading work.csb_vlg_check_tst
+# Loading altera_ver.PRIM_GDFF_LOW
+# Warning : Input clock freq. is under VCO range. Cycloneive PLL may lose lock
+# Time: 15000.000 ps  Instance: csb_vlg_vec_tst.i1.\inst|altpll_component|auto_generated|pll1 
+# ERROR! Vector Mismatch for output port clk1M1 :: @time = 1000000.000 ps
+#      Expected value = 0
+#      Real value = x
+#           1 mismatched vectors : Simulation failed !
+# ** Note: $finish    : Waveform.vwf.vt(203)
+#    Time: 100 us  Iteration: 0  Instance: /csb_vlg_vec_tst/tb_out

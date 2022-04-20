@@ -1,0 +1,247 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "03/31/2022 11:46:01"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    csb
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module csb_vlg_sample_tst(
+	clk,
+	sampler_tx
+);
+input  clk;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(clk)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module csb_vlg_check_tst (
+	clk1M1,
+	clk1M2,
+	T15us,
+	sampler_rx
+);
+input  clk1M1;
+input  clk1M2;
+input  T15us;
+input sampler_rx;
+
+reg  clk1M1_expected;
+reg  clk1M2_expected;
+reg  T15us_expected;
+
+reg  clk1M1_prev;
+reg  clk1M2_prev;
+reg  T15us_prev;
+
+reg  clk1M1_expected_prev;
+reg  clk1M2_expected_prev;
+reg  T15us_expected_prev;
+
+reg  last_clk1M1_exp;
+reg  last_clk1M2_exp;
+reg  last_T15us_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:3] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 3'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	clk1M1_prev = clk1M1;
+	clk1M2_prev = clk1M2;
+	T15us_prev = T15us;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	clk1M1_expected_prev = clk1M1_expected;
+	clk1M2_expected_prev = clk1M2_expected;
+	T15us_expected_prev = T15us_expected;
+end
+
+
+
+// expected clk1M1
+initial
+begin
+	clk1M1_expected = 1'bX;
+	clk1M1_expected = #999000 1'b0;
+end 
+
+// expected T15us
+initial
+begin
+	T15us_expected = 1'bX;
+end 
+
+// expected clk1M2
+initial
+begin
+	clk1M2_expected = 1'bX;
+end 
+// generate trigger
+always @(clk1M1_expected or clk1M1 or clk1M2_expected or clk1M2 or T15us_expected or T15us)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected clk1M1 = %b | expected clk1M2 = %b | expected T15us = %b | ",clk1M1_expected_prev,clk1M2_expected_prev,T15us_expected_prev);
+	$display("| real clk1M1 = %b | real clk1M2 = %b | real T15us = %b | ",clk1M1_prev,clk1M2_prev,T15us_prev);
+`endif
+	if (
+		( clk1M1_expected_prev !== 1'bx ) && ( clk1M1_prev !== clk1M1_expected_prev )
+		&& ((clk1M1_expected_prev !== last_clk1M1_exp) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port clk1M1 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", clk1M1_expected_prev);
+		$display ("     Real value = %b", clk1M1_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_clk1M1_exp = clk1M1_expected_prev;
+	end
+	if (
+		( clk1M2_expected_prev !== 1'bx ) && ( clk1M2_prev !== clk1M2_expected_prev )
+		&& ((clk1M2_expected_prev !== last_clk1M2_exp) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port clk1M2 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", clk1M2_expected_prev);
+		$display ("     Real value = %b", clk1M2_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_clk1M2_exp = clk1M2_expected_prev;
+	end
+	if (
+		( T15us_expected_prev !== 1'bx ) && ( T15us_prev !== T15us_expected_prev )
+		&& ((T15us_expected_prev !== last_T15us_exp) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port T15us :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", T15us_expected_prev);
+		$display ("     Real value = %b", T15us_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_T15us_exp = T15us_expected_prev;
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#100000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module csb_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg clk;
+// wires                                               
+wire clk1M1;
+wire clk1M2;
+wire T15us;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+csb i1 (
+// port map - connection between master ports and signals/registers   
+	.clk(clk),
+	.clk1M1(clk1M1),
+	.clk1M2(clk1M2),
+	.T15us(T15us)
+);
+
+// clk
+always
+begin
+	clk = 1'b0;
+	clk = #5000 1'b1;
+	#5000;
+end 
+
+csb_vlg_sample_tst tb_sample (
+	.clk(clk),
+	.sampler_tx(sampler)
+);
+
+csb_vlg_check_tst tb_out(
+	.clk1M1(clk1M1),
+	.clk1M2(clk1M2),
+	.T15us(T15us),
+	.sampler_rx(sampler)
+);
+endmodule
+

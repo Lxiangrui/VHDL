@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="csb">
+		<CBX_INST_ENTRY INSTANCE_NAME="|csb|altpll1:inst|altpll:altpll_component" CBX_FILE_NAME="altpll1_altpll.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|csb|shumaguan4:inst3|lpm_divide:Div2" CBX_FILE_NAME="lpm_divide_6jm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|csb|shumaguan4:inst3|lpm_divide:Mod1" CBX_FILE_NAME="lpm_divide_fcm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|csb|shumaguan4:inst3|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_bkm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|csb|shumaguan4:inst3|lpm_divide:Div3" CBX_FILE_NAME="lpm_divide_uim.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|csb|shumaguan4:inst3|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_fcm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|csb|shumaguan4:inst3|lpm_divide:Mod2" CBX_FILE_NAME="lpm_divide_fcm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|csb|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_coj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|csb|shumaguan4:inst3|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_ajm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|csb|shumaguan4:inst3|lpm_mult:Mult0" CBX_FILE_NAME="mult_dft.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
